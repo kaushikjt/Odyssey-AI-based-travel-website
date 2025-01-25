@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Results</title>
+</head>
+<body>
+    <h1>Hotel Results for <%= destination %></h1>
+    <p>Check-in Date: <%= checkinDate %> | Check-out Date: <%= checkoutDate %> | Number of Guests: <%= numberOfGuests %></p>
+
+
+
+    <% if (hotels.length > 0) { %>
+        <ul>
+            <% hotels.forEach(hotel => { %>
+                <li>
+                    <h3><%= hotel.name %></h3>
+                    <p>Price: <%= hotel.price %> INR | Rating: <%= hotel.rating %></p>
+                </li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>No hotels found for your search.</p>
+    <% } %>
+</body>
+</html>

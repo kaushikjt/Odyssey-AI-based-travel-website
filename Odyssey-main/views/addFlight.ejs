@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Flight</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Add Flight</h1>
+    <form action="/flights/add" method="POST">
+        <label>Airline: <input type="text" name="airline" required></label><br>
+        <label>Flight Number: <input type="text" name="flightNumber" required></label><br>
+        <label>Departure: <input type="text" name="departure" required></label><br>
+        <label>Destination: <input type="text" name="destination" required></label><br>
+        <label>Departure Time: <input type="datetime-local" name="departureTime" required></label><br>
+        <label>Arrival Time: <input type="datetime-local" name="arrivalTime" required></label><br>
+        <label>Price: <input type="number" name="price" required></label><br>
+        <button type="submit">Add Flight</button>
+    </form>
+</body>
+</html>

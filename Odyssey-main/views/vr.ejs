@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesheets/vrstyles.css">
+  <title>Travel Destinations</title>
+  <style>
+    /* Navbar container */
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 75px;
+        background-color: #fff;
+        padding: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        z-index: 1000;
+        border-radius: 0;
+    }
+
+    /* Container for icons */
+    .nav-icons {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+    }
+
+    /* Individual icon style */
+    .icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: transform 0.3s;
+        width: 50px;
+    }
+
+    /* Hover effect on icons */
+    .icon:hover {
+        transform: scale(1.1); /* Slight zoom effect on hover */
+    }
+
+    /* Icon text style */
+    .icon span {
+        margin-top: 5px;
+        font-size: 12px;
+        color: #333;
+    }
+
+    /* Image style for icons */
+    .icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Customizing icon sizes for some icons */
+    .icon img[src*="hotels.svg"] {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Ensuring icons are aligned properly */
+    .navbar .icon a {
+        text-decoration: none; /* Remove underlines */
+        color: inherit; /* Inherit color from the parent element */
+    }
+
+    /* Section styling */
+    section {
+        margin-top: 120px; /* Adjust to make space for the fixed navbar */
+    }
+
+    .section .container {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+
+    .underline {
+        width: 80px;
+        height: 3px;
+        background-color: #333;
+        margin-bottom: 20px;
+    }
+
+    .description {
+        font-size: 1.2em;
+        color: #666;
+        line-height: 1.5;
+    }
+
+    /* Cards styling */
+    .cards {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        background-color: #282c34;
+        border: 1px solid #282c34;
+        width: 300px;
+        padding: 15px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .card h2 {
+        font-size: 1.5em;
+        margin: 10px 0;
+    }
+
+    .card p {
+        color: #777;
+    }
+    #loadingSpinner {
+                display: none;/* Hidden by default */
+                position: fixed; /* Stay centered regardless of scrolling */
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%); /* Center on the screen */
+                width: 15vw; /* Scaled for responsiveness */
+                height: 15vw;
+                background-color: white; /* Semi-transparent black for overlay */
+                z-index: 9999; /* Ensure it's above all other elements */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%; /* Optional for rounded effect */
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Shadow for depth */
+            }
+    
+            #loadingSpinner img {
+                width: 100%; /* Match parent dimensions */
+                height: 100%;
+                object-fit: contain; /* Maintain aspect ratio */
+                border-radius: 50%; /* Rounded spinner */
+            }
+  </style>
+  <script>
+    function navigateWithDelay(event, url) {
+        event.preventDefault(); // Stops immediate redirection
+        const spinner = document.getElementById('loadingSpinner');
+        spinner.style.display = 'flex'; // Show the spinner
+        setTimeout(() => {
+            spinner.style.display = 'none'; // Hide the spinner after 3 seconds
+            window.location.href = url; // Navigate to the URL
+        }, 3000); // Delay in milliseconds
+    }
+
+    // Ensure the spinner is hidden when the page is shown (handles browser back/forward navigation)
+    window.addEventListener("pageshow", () => {
+        const spinner = document.getElementById('loadingSpinner');
+        spinner.style.display = 'none'; // Ensure it's hidden immediately when the page is shown
+    });
+</script>
+
+</head>
+<body>
+    <div id="loadingSpinner" style="display: none;">
+        <img src="images/loading.gif" alt="Loading...">
+      </div>
+      
+  <header>
+    <div class="navbar">
+        <div class="nav-icons">
+            <div class="icon">
+                <a href="flightSearchForm" onclick="navigateWithDelay(event, 'flightSearchForm')">
+                    <img src="images/flights.svg" alt="Flights" style="width: 40px; height: 40px;">
+                    <span>Flights</span>
+                </a>
+            </div>
+            
+            <div class="icon">
+                <a href="hotelsSearchForm.ejs" onclick="navigateWithDelay(event, 'hotelsSearchForm')">
+                    <img src="images/hotels.svg" alt="Hotels" style="width: 35px; height: 35px;">
+                </a>
+                <span>Hotels</span>
+            </div>
+            <div class="icon">
+                <a href="train_ip_form" onclick="navigateWithDelay(event, 'train_ip_form')">
+                    <img src="images/trains.svg" alt="Trains" style="width: 40px; height: 40px;">
+                </a>
+                <span>Trains</span>
+            </div>
+            <div class="icon">
+                <img src="images/bus.svg" alt="Buses" style="width: 40px; height: 40px;">
+                <span>Buses</span>
+            </div>
+            <!-- <div class="icon">
+                <img src="images/cab.svg" alt="Cabs" style="width: 40px; height: 40px;">
+                <span>Cabs</span>
+            </div> -->
+            <div class="icon">
+                <a href="blog" onclick="navigateWithDelay(event, 'blog')">
+                    <img src="images/blog.svg" alt="Blog" style="width: 40px; height: 40px;">
+                </a>
+                <span>Blog</span>
+            </div>
+            <!-- <div class="icon">
+                <img src="images/ginie.svg" alt="Journey genie" style="width: 40px; height: 40px;">
+                <span>Journey genie</span>
+            </div> -->
+            <div class="icon">
+                <a href="vr" onclick="navigateWithDelay(event, 'vr')">
+                    <img src="images/vr.svg" alt="VR View" style="width: 40px; height: 40px;">
+                    <span>VR View</span>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="header">
+        <h1>Step into the World of VR</h1>
+        <div class="underline"></div>
+        <p class="description">
+          Experience the wonders of India like never before! From the majestic Himalayas to vibrant cityscapes and ancient temples, our VR tours transport you to iconic destinations across the country. Embark on immersive journeys and explore India’s rich heritage, all from the comfort of your home.
+        </p>
+      </div>
+      <div class="cards">
+        <a href="delhi" onclick="navigateWithDelay(event, 'delhi')" class="card">
+          <img src="images/taj.jpg" alt="Delhi">
+          <h2>Delhi</h2>
+          <p>A vibrant blend of ancient heritage and modern dynamism, where history meets the heart of India.</p>
+        </a>
+        <a href="karnataka" onclick="navigateWithDelay(event, 'karnataka')" class="card">
+          <img src="images/karnataka.webp" alt="Karnataka">
+          <h2>Karnataka</h2>
+          <p>A land of stunning landscapes, ancient temples, and vibrant culture, where tradition meets technological innovation.</p>
+        </a>
+        <a href="kerala" onclick="navigateWithDelay(event, 'kerala')" class="card">
+          <img src="images/Kerala.jpg" alt="Kerala">
+          <h2>Kerala</h2>
+          <p>Known as 'God's Own Country,' this paradise offers serene backwaters, lush greenery, and a rich tapestry of culture and traditions.</p>
+        </a>
+        <a href="goa" onclick="navigateWithDelay(event, 'goa')" class="card">
+          <img src="images/Goa.webp" alt="Goa">
+          <h2>Goa</h2>
+          <p>A tropical haven of golden beaches, vibrant nightlife, and Portuguese heritage, perfect for sun, sea, and celebration.</p>
+        </a>
+        <a href="maharastra" onclick="navigateWithDelay(event, 'maharastra')" class="card">
+            <img src="images/maharstra.jpg" alt="Maharastra">
+            <h2>Maharastra</h2>
+            <p>A vibrant state in India, known for its diverse culture, historic forts, bustling cities like Mumbai and Pune, and scenic landscapes from beaches to hill stations.</p>
+        </a>
+        <a href="himachal" onclick="navigateWithDelay(event, 'himachal')" class="card">
+            <img src="images/himachal.webp" alt="Himachal Pradesh">
+            <h2>Himachal Pradesh</h2>
+            <p>The 'Land of the Gods,' is a serene paradise in northern India, renowned for its breathtaking Himalayan landscapes, quaint hill stations, and vibrant cultural heritage.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2024/10/05/06/20241005061236-ZKFYVTNV.js"></script>
+</body>
+</html>

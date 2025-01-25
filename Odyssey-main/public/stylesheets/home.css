@@ -1,0 +1,104 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.header {
+    position: relative;
+}
+
+.navbar {
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 15px;
+    left: 25px;
+    right: 25px;
+    border-radius: 82.2px;
+}
+
+.Logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    gap: 25px; /* Adjusted space between icons */
+    flex-wrap: wrap; /* Allow wrapping of icons on smaller screens */
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s;
+    width: 70px; /* Fixed width for icons to maintain uniform spacing */
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+.icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.icon span {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+    margin-top: 150px; /* To avoid overlap with the fixed navbar */
+}
+
+.background img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.icon-svg {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.icon-svg:hover {
+    transform: scale(1.1);
+    filter: brightness(0) saturate(100%) invert(41%) sepia(81%) saturate(3690%) hue-rotate(349deg) brightness(91%) contrast(102%);
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 450px; /* Set the desired height of the header */
+    overflow: hidden; /* Ensure no extra part of the image is visible */
+}
+
+.background img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure the image fills the header */
+}

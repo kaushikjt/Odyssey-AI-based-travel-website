@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/places.css">
+    <title>Travel Destinations</title>
+</head>
+<script>
+    function navigateWithDelay(event, url) {
+        event.preventDefault(); // Stops immediate redirection
+        const spinner = document.getElementById('loadingSpinner');
+        spinner.style.display = 'flex'; // Show the spinner
+        setTimeout(() => {
+            spinner.style.display = 'none'; // Hide the spinner after 3 seconds
+            window.location.href = url; // Navigate to the URL
+        }, 3000); // Delay in milliseconds
+    }
+
+    // Ensure the spinner is hidden when the page is shown (handles browser back/forward navigation)
+    window.addEventListener("pageshow", () => {
+        const spinner = document.getElementById('loadingSpinner');
+        spinner.style.display = 'none'; // Ensure it's hidden immediately when the page is shown
+    });
+</script>
+
+<body>
+    <div id="loadingSpinner" style="display: none;">
+        <img src="images/loading.gif" alt="Loading...">
+      </div>
+
+    <header class="bg-indigo-600 text-white text-center p-6 relative">
+        <div class="logo absolute left-6 top-1/2 transform -translate-y-1/2">
+            <a href="home" onclick="navigateWithDelay(event, 'home')">
+                <img src="images/logo.svg" alt="WanderWise Logo" style="width: 150px; height: auto;">
+            </a>
+        </div>
+        <div>
+            <h1 class="text-3xl font-bold">Explore Incredible Destinations</h1>
+            <p class="mt-2 text-lg">Discover the wonders of India</p>
+        </div>
+    </header>
+
+    <main class="text-gray-600 body-font">
+        <section class="container px-5 py-12 mx-auto">
+            <div class="lg:w-4/6 mx-auto mb-12">
+                <h2 class="text-2xl font-bold mb-6">
+                    Hampta Pass: A Thrilling Adventure in the Heart of the Himalayas</h2>
+                <div class="rounded-lg overflow-hidden mb-10">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1730728950146!6m8!1m7!1sCAoSLEFGMVFpcFBTY2RSTGpndndDQ1ZEOHphS0h5RG1DM05PTkhQeEE3SjBoMHMy!2m2!1d32.26768647955437!2d77.24735411655953!3f94.89036358911804!4f11.645879838963893!5f0.7820865974627469"  frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <p class="leading-relaxed text-lg mb-4">
+                    Hampta Pass, located in the enchanting region of Himachal Pradesh, India, offers trekkers a unique journey through the stunning landscapes of the Himalayas. This remarkable pass connects the lush green valleys of Kullu with the arid terrain of Lahaul, making it a captivating trek for adventure enthusiasts. With an elevation of approximately 14,000 feet, the pass provides breathtaking views of snow-capped peaks, verdant meadows, and glacial streams, making every step of the trek a visual delight. The best time to undertake this adventure is from June to September when the weather is favorable and the trails are accessible, allowing trekkers to fully immerse themselves in the beauty of nature.</p>
+                <p class="leading-relaxed text-lg mb-4">
+                    The Hampta Pass trek is not just a physical challenge; it also offers an opportunity to witness the diverse ecosystems of the region. As you ascend, the landscape transforms from lush green forests to rocky terrains and barren mountains, showcasing the incredible variety of flora and fauna found in the Himalayas. Trekkers can encounter local wildlife, vibrant wildflowers, and breathtaking vistas that change with each turn of the trail. Along the way, campsites provide a chance to relax under a blanket of stars, sharing stories around a warm campfire. Hampta Pass is a remarkable adventure that combines natural beauty, cultural experiences, and the thrill of trekking, making it a must-visit destination for nature lovers and adventure seekers alike.</p>
+            </div>
+        </section>
+
+        <section class="container px-5 py-12 mx-auto">
+            <div class="lg:w-4/6 mx-auto mb-12">
+                <h2 class="text-2xl font-bold mb-6">Shree Hanuman Temple, Jakhu: A Spiritual Retreat in Shimla
+                </h2>
+                <div class="rounded-lg overflow-hidden mb-10">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1730729746752!6m8!1m7!1sCAoSLEFGMVFpcE9scVdhZkgtX2xZejRrMkhjQzJQLW5LRGFFQm9tbUxsMWoxVGhl!2m2!1d31.1011646054278!2d77.18398323724925!3f200!4f10!5f0.7820865974627469"frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <p class="leading-relaxed text-lg mb-4">
+                    Shree Hanuman Temple, perched atop Jakhu Hill in Shimla, is a revered shrine dedicated to Lord Hanuman, known for his immense strength and devotion. Located at an elevation of about 2,455 meters, this temple offers stunning panoramic views of the surrounding mountains and valleys. Visitors often embark on a trek up the hill, which is lined with beautiful cedar trees and offers a refreshing escape from the bustling town below. The temple, with its serene ambiance, attracts devotees and tourists alike, making it a significant pilgrimage site in the region.</p>
+                </p>
+                <p class="leading-relaxed text-lg mb-4">
+                    The temple is famous for its towering statue of Lord Hanuman, which stands at 108 feet, making it one of the tallest statues of the deity in the world. This impressive figure can be seen from various parts of Shimla, symbolizing strength and protection. The temple not only serves as a place of worship but also as a peaceful retreat for those seeking solace in nature. Visitors can enjoy the tranquil surroundings, participate in rituals, and witness the vibrant festivities during festivals, creating a memorable spiritual experience at Shree Hanuman Temple, Jakhu.</p>
+            </div>
+        </section>
+        
+        <section class="container px-5 py-12 mx-auto">
+            <div class="lg:w-4/6 mx-auto mb-12">
+                <h2 class="text-2xl font-bold mb-6">Spiti Valley: A Mystical Journey Through the Himalayan Desert
+                </h2>
+                <div class="rounded-lg overflow-hidden mb-10">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1730730573391!6m8!1m7!1sQ_gu9l9clklml3PPCwi_WA!2m2!1d32.40590793205021!2d77.95156919934655!3f326.0129!4f0!5f0.7820865974627469"  frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <p class="leading-relaxed text-lg mb-4">
+                    Spiti Valley, located in the northern Indian state of Himachal Pradesh, is a high-altitude desert that captivates travelers with its rugged landscapes and serene beauty. Known for its breathtaking mountains, ancient monasteries, and unique cultural heritage, Spiti is often referred to as “Little Tibet.” The valley is home to stunning vistas, with towering peaks, crystal-clear rivers, and charming villages, making it a paradise for adventure enthusiasts and nature lovers. The best time to visit is during the summer months, from May to October, when the weather is milder and the roads are accessible.
+
+                </p>
+                <p class="leading-relaxed text-lg mb-4">
+                    The rich culture of Spiti Valley is deeply rooted in Buddhism, evident in its numerous monasteries, such as Ki Monastery and Tabo Monastery, which are among the oldest in the region. Visitors can explore traditional villages, interact with the warm-hearted locals, and experience their unique way of life. Trekking, camping, and river rafting are popular activities that allow travelers to immerse themselves in the stunning landscapes. Spiti Valley offers a unique blend of adventure and tranquility, making it an unforgettable destination for those seeking to experience the untouched beauty of the Himalayas.</p>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="bg-gray-200 text-center p-4">
+        <p class="text-gray-600">© 2024 Travel Destinations. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

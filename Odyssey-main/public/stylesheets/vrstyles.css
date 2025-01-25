@@ -1,0 +1,110 @@
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Changed font for a more modern look */
+    color: #fff; /* Light text for better contrast */
+    background: linear-gradient(135deg, #1d1d1d, #3a3a3a); /* Futuristic gradient background */
+    padding: 0;
+    margin: 0;
+}
+
+/* Section Styling */
+.section {
+    padding: 4rem 2rem;
+}
+
+/* Container */
+.container {
+    max-width: 1200px; /* Adjusted max width */
+    margin: 0 auto; /* Centered container */
+    padding: 1.5rem;
+}
+
+/* Header Styling */
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    font-size: 2.8rem; /* Larger font size */
+    color: #00adb5; /* Futuristic teal color */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Added text shadow for depth */
+}
+
+.underline {
+    width: 120px; /* Wider underline */
+    height: 5px; /* Thicker underline */
+    background-color: #00adb5; /* Same as header color */
+    margin: 1.5rem auto;
+    border-radius: 10px; /* Rounded edges */
+}
+
+.description {
+    color: #e0e0e0; /* Softer white color */
+    max-width: 700px; /* Wider max width */
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* Cards Layout */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 1.5rem; /* Increased gap */
+}
+
+/* Card Styling */
+.card {
+    background-color: #282c34; /* Darker card background */
+    border-radius: 15px; /* More rounded corners */
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Added shadow transition */
+    position: relative; /* For hover effect */
+    overflow: hidden; /* Ensure no overflow */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+}
+
+.card img {
+    border-radius: 15px; /* Matching image border radius */
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s; /* Smooth image transition */
+}
+
+.card:hover img {
+    transform: scale(1.05); /* Slight zoom effect on image hover */
+}
+
+/* Card Text Styling */
+.card h2 {
+    font-size: 1.6rem; /* Increased font size */
+    color: #00adb5; /* Consistent color scheme */
+    margin-top: 0.75rem;
+}
+
+.card p {
+    color: #282c34; /* Softer white color */
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-top: 0.75rem;
+}
+
+a {
+    text-decoration: none; /* Removes the underline from links */
+    color: inherit; /* Makes the link color the same as the surrounding text */
+}

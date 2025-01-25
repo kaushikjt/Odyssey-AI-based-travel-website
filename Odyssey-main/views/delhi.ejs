@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/places.css">
+    <title>Travel Destinations</title>
+</head>
+<script>
+    function navigateWithDelay(event, url) {
+        event.preventDefault(); // Stops immediate redirection
+        const spinner = document.getElementById('loadingSpinner');
+        spinner.style.display = 'flex'; // Show the spinner
+        setTimeout(() => {
+            spinner.style.display = 'none'; // Hide the spinner after 3 seconds
+            window.location.href = url; // Navigate to the URL
+        }, 3000); // Delay in milliseconds
+    }
+
+    // Ensure the spinner is hidden when the page is shown (handles browser back/forward navigation)
+    window.addEventListener("pageshow", () => {
+        const spinner = document.getElementById('loadingSpinner');
+        spinner.style.display = 'none'; // Ensure it's hidden immediately when the page is shown
+    });
+</script>
+
+<body>
+    <div id="loadingSpinner" style="display: none;">
+        <img src="images/loading.gif" alt="Loading...">
+      </div>
+    <header class="bg-indigo-600 text-white text-center p-6 relative">
+        <div class="logo absolute left-6 top-1/2 transform -translate-y-1/2">
+            <a href="home" onclick="navigateWithDelay(event, 'home')">
+                <img src="images/logo.svg" alt="WanderWise Logo" style="width: 150px; height: auto;">
+            </a>
+        </div>
+        <div>
+            <h1 class="text-3xl font-bold">Explore Incredible Destinations</h1>
+            <p class="mt-2 text-lg">Discover the wonders of India</p>
+        </div>
+    </header>
+    
+    
+
+    <main class="text-gray-600 body-font">
+        <section class="container px-5 py-12 mx-auto">
+            <div class="lg:w-4/6 mx-auto mb-12">
+                <h2 class="text-2xl font-bold mb-6">Taj Mahal: A Symbol of Eternal Love</h2>
+                <div class="rounded-lg overflow-hidden mb-10">
+                    <iframe src="https://www.airpano.com/embed.php?3D=taj-mahal-india" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <p class="leading-relaxed text-lg mb-4">
+                    The Taj Mahal, a UNESCO World Heritage Site in Agra, India, symbolizes love and was commissioned in 1632 by Mughal Emperor Shah Jahan for his wife, Mumtaz Mahal. Known for its stunning white marble architecture that changes color with the sunlight, the complex features a mosque, a guest house, and beautifully landscaped gardens. Construction lasted about 22 years, involving thousands of artisans who created intricate inlay work with semi-precious stones.
+                </p>
+                <p class="leading-relaxed text-lg mb-4">
+                    The mausoleum houses the tombs of Shah Jahan and Mumtaz Mahal. As one of the world's most popular tourist destinations, the Taj Mahal faces challenges like pollution and tourism impact, prompting preservation efforts. It remains a masterpiece of architecture and a lasting symbol of eternal love.
+                </p>
+            </div>
+        </section>
+
+        <section class="container px-5 py-12 mx-auto">
+            <div class="lg:w-4/6 mx-auto mb-12">
+                <h2 class="text-2xl font-bold mb-6">Akshardham Temple: A Marvel of Faith and Artistry
+                </h2>
+                <div class="rounded-lg overflow-hidden mb-10">
+                    <iframe src="https://www.airpano.com/embed.php?3D=akshardham-india" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <p class="leading-relaxed text-lg mb-4">
+                    Akshardham Temple, located in Delhi, India, is a stunning spiritual complex that showcases traditional Indian art and architecture. Inaugurated in 2005, it is dedicated to Bhagwan Swaminarayan and features intricate carvings and sculptures crafted from pink sandstone and white marble.
+                </p>
+                </p>
+                <p class="leading-relaxed text-lg mb-4">
+                    The temple is surrounded by beautifully landscaped gardens and water bodies, with cultural exhibits highlighting India's rich heritage. One of its main attractions is the Yagnapurush Kund, the largest stepwell in the world. The temple complex also hosts multimedia presentations that depict the life and teachings of Swaminarayan, making it a symbol of peace and harmony.
+                </p>
+            </div>
+        </section>
+        
+        <section class="container px-5 py-12 mx-auto">
+            <div class="lg:w-4/6 mx-auto mb-12">
+                <h2 class="text-2xl font-bold mb-6">Agra Fort: The Jewel of Mughal Architecture
+                </h2>
+                <div class="rounded-lg overflow-hidden mb-10">
+                    <iframe src="https://www.airpano.com/embed.php?3D=agra-fort-india" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <p class="leading-relaxed text-lg mb-4">
+                    
+Agra Fort, located in Agra, India, is a magnificent UNESCO World Heritage Site that embodies the grandeur of Mughal architecture. Built in the 16th century under the reign of Emperor Akbar, this imposing fort is constructed from red sandstone and showcases an impressive blend of military might and intricate artistry. The fort's walls, standing tall at 70 feet, encompass a vast complex filled with palaces, gardens, and mosques, reflecting the opulence of the Mughal era. Notable structures within the fort include the beautiful Jahangir Palace, the elegant Khas Mahal, and the stunning Sheesh Mahal, each adorned with intricate carvings and elaborate inlay work.
+                </p>
+                </p>
+                <p class="leading-relaxed text-lg mb-4">
+                    The fort is not only a historical monument but also offers breathtaking views of the nearby Taj Mahal, which stands as a symbol of eternal love. Visitors can explore the fort’s rich history through various exhibitions and displays, learning about its role in the Mughal Empire. The fort's strategic location and architectural brilliance make it a significant cultural landmark, drawing tourists from around the world. With its rich heritage and architectural splendor, Agra Fort stands as a testament to the artistic and cultural achievements of the Mughal dynasty, symbolizing India's rich historical legacy.
+                </p>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="bg-gray-200 text-center p-4">
+        <p class="text-gray-600">© 2024 Travel Destinations. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

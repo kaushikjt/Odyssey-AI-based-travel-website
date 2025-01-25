@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/places.css">
+    <title>Travel Destinations</title>
+</head>
+<script>
+    function navigateWithDelay(event, url) {
+        event.preventDefault(); // Stops immediate redirection
+        const spinner = document.getElementById('loadingSpinner');
+        spinner.style.display = 'flex'; // Show the spinner
+        setTimeout(() => {
+            spinner.style.display = 'none'; // Hide the spinner after 3 seconds
+            window.location.href = url; // Navigate to the URL
+        }, 3000); // Delay in milliseconds
+    }
+
+    // Ensure the spinner is hidden when the page is shown (handles browser back/forward navigation)
+    window.addEventListener("pageshow", () => {
+        const spinner = document.getElementById('loadingSpinner');
+        spinner.style.display = 'none'; // Ensure it's hidden immediately when the page is shown
+    });
+</script>
+
+<body>
+    <div id="loadingSpinner" style="display: none;">
+        <img src="images/loading.gif" alt="Loading...">
+      </div>
+    <header class="bg-indigo-600 text-white text-center p-6 relative">
+        <div class="logo absolute left-6 top-1/2 transform -translate-y-1/2">
+            <a href="home" onclick="navigateWithDelay(event, 'home')">
+                <img src="images/logo.svg" alt="WanderWise Logo" style="width: 150px; height: auto;">
+            </a>
+        </div>
+        <div>
+            <h1 class="text-3xl font-bold">Explore Incredible Destinations</h1>
+            <p class="mt-2 text-lg">Discover the wonders of India</p>
+        </div>
+    </header>
+
+    <main class="text-gray-600 body-font">
+        <section class="container px-5 py-12 mx-auto">
+            <div class="lg:w-4/6 mx-auto mb-12">
+                <h2 class="text-2xl font-bold mb-6">Mysore Palace: A Royal Marvel of Grandeur and Heritage</h2>
+                <div class="rounded-lg overflow-hidden mb-10">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1730605680736!6m8!1m7!1sCAoSLEFGMVFpcE8xUTl0YzUxeXdoeWUyM1pGNGtTcWJYdEZObDNjQ0RoOXNnbTJC!2m2!1d12.3052077882358!2d76.65533693058484!3f350.65665!4f19.362099999999998!5f0.7820865974627469" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <p class="leading-relaxed text-lg mb-4">
+                    Mysore Palace, located in the heart of Mysore, Karnataka, is one of India’s most exquisite and celebrated royal residences. Built in the Indo-Saracenic style, the palace combines Hindu, Muslim, Rajput, and Gothic architectural influences, creating a unique and breathtaking structure. Its grandiose exterior, adorned with domes, turrets, arches, and intricate carvings, reflects the wealth and power of the Wadiyar dynasty. The palace interiors are equally impressive, featuring ornate halls, vibrant stained glass, intricate woodwork, and vibrant paintings that narrate the rich history of Mysore’s royal family.
+                </p>
+                <p class="leading-relaxed text-lg mb-4">
+                    One of the most captivating experiences at Mysore Palace is its illumination during special occasions and the Dussehra festival when thousands of lights bathe the palace in a golden glow, making it look like something out of a fairytale. The palace also houses a museum showcasing royal artifacts, jewelry, and artwork, offering visitors a glimpse into the royal lifestyle and Mysore’s cultural heritage. With its architectural splendor and historical significance, Mysore Palace continues to be a beloved symbol of Karnataka’s royal legacy and a testament to India’s rich cultural tapestry.
+                </p>
+            </div>
+        </section>
+
+        <section class="container px-5 py-12 mx-auto">
+            <div class="lg:w-4/6 mx-auto mb-12">
+                <h2 class="text-2xl font-bold mb-6">The Stone Chariot of Hampi: A Timeless Icon of Ancient Artistry
+                </h2>
+                <div class="rounded-lg overflow-hidden mb-10">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1730606152679!6m8!1m7!1sCAoSLEFGMVFpcE1zT25FLVFfcDI4OFV4aC1kWDJ1VXRuVkFiZmU0U0RQTGlILVNY!2m2!1d15.34226060425685!2d76.47579923837093!3f16.088617811545532!4f-5.6488808910239925!5f0.7820865974627469" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <p class="leading-relaxed text-lg mb-4">
+                    The Stone Chariot at Hampi, located within the Vijaya Vittala Temple complex, is one of the most iconic and photographed structures in India. Built during the reign of the Vijayanagara Empire, this chariot is carved entirely out of stone and stands as a remarkable example of ancient Indian craftsmanship. Resembling a temple on wheels, the chariot is adorned with intricate carvings depicting scenes from mythology, gods, and celestial beings. The chariot’s wheels, though fixed, are detailed with spokes and axle-like structures, giving it a lifelike appearance.
+                </p>
+                </p>
+                <p class="leading-relaxed text-lg mb-4">
+                    This monument holds great cultural and spiritual significance, symbolizing the mythical chariots of Lord Vishnu and reflecting the devotion of the Vijayanagara kings to their gods. Surrounded by the ruins of the once-thriving Hampi empire, the Stone Chariot evokes a sense of wonder and nostalgia, connecting visitors to a glorious past. Today, it stands as a UNESCO World Heritage Site and a testament to the artistic achievements of India’s ancient civilizations, drawing travelers and history enthusiasts from all around the world.
+                </p>
+            </div>
+        </section>
+        
+        <section class="container px-5 py-12 mx-auto">
+            <div class="lg:w-4/6 mx-auto mb-12">
+                <h2 class="text-2xl font-bold mb-6">Jog Falls: Nature’s Majestic Cascade in Karnataka
+                </h2>
+                <div class="rounded-lg overflow-hidden mb-10">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1730606501618!6m8!1m7!1sCAoSLEFGMVFpcE9EdkxrT2JTdTE0TkZwNmZBWk15S3h0Y243UFhrbUhZTnBheWdL!2m2!1d14.22766197653703!2d74.81166153215258!3f245.13667914979527!4f-9.640241180381167!5f0.7820865974627469" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <p class="leading-relaxed text-lg mb-4">
+                    Jog Falls, located in the Shimoga district of Karnataka, is one of the tallest and most breathtaking waterfalls in India. Plunging from a height of 830 feet, the Sharavathi River splits into four distinct streams—Raja, Rani, Rocket, and Roarer—each creating a unique cascade that combines to form this awe-inspiring natural wonder. Unlike most waterfalls, Jog Falls is an un-tiered waterfall, allowing water to drop freely and create a powerful and dramatic plunge that captivates visitors, especially during the monsoon season when the falls are at their fullest.  
+</p>
+                </p>
+                <p class="leading-relaxed text-lg mb-4">
+                    Surrounded by lush greenery and rocky cliffs, Jog Falls provides a serene and scenic escape for nature lovers and adventure seekers alike. The mist rising from the falls creates a magical aura, and several viewpoints offer panoramic views of the cascading waters. Treks and trails around the falls allow visitors to immerse themselves in the area's beauty, while the thunderous sound of the water echoes through the valley, leaving an unforgettable impression. Jog Falls continues to be one of Karnataka’s most cherished natural attractions, drawing travelers from across the world to witness its breathtaking splendor.
+</p>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="bg-gray-200 text-center p-4">
+        <p class="text-gray-600">© 2024 Travel Destinations. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

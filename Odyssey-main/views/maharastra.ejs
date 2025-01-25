@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/places.css">
+    <title>Travel Destinations</title>
+</head>
+<script>
+    function navigateWithDelay(event, url) {
+        event.preventDefault(); // Stops immediate redirection
+        const spinner = document.getElementById('loadingSpinner');
+        spinner.style.display = 'flex'; // Show the spinner
+        setTimeout(() => {
+            spinner.style.display = 'none'; // Hide the spinner after 3 seconds
+            window.location.href = url; // Navigate to the URL
+        }, 3000); // Delay in milliseconds
+    }
+
+    // Ensure the spinner is hidden when the page is shown (handles browser back/forward navigation)
+    window.addEventListener("pageshow", () => {
+        const spinner = document.getElementById('loadingSpinner');
+        spinner.style.display = 'none'; // Ensure it's hidden immediately when the page is shown
+    });
+</script>
+
+<body>
+    <div id="loadingSpinner" style="display: none;">
+        <img src="images/loading.gif" alt="Loading...">
+      </div>
+
+    <header class="bg-indigo-600 text-white text-center p-6 relative">
+        <div class="logo absolute left-6 top-1/2 transform -translate-y-1/2">
+            <a href="home" onclick="navigateWithDelay(event, 'home')">
+                <img src="images/logo.svg" alt="WanderWise Logo" style="width: 150px; height: auto;">
+            </a>
+        </div>
+        <div>
+            <h1 class="text-3xl font-bold">Explore Incredible Destinations</h1>
+            <p class="mt-2 text-lg">Discover the wonders of India</p>
+        </div>
+    </header>
+
+    <main class="text-gray-600 body-font">
+        <section class="container px-5 py-12 mx-auto">
+            <div class="lg:w-4/6 mx-auto mb-12">
+                <h2 class="text-2xl font-bold mb-6">Gateway of India: The Majestic Archway to Mumbai</h2>
+                <div class="rounded-lg overflow-hidden mb-10">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1730687638406!6m8!1m7!1sCAoSLEFGMVFpcE9UTXZaWkRzTGFIY01Mc3hTcHR4Rl80VXBIZEQ4d05ETXVxcHBJ!2m2!1d18.92247958964608!2d72.83415216202093!3f127.65292640290815!4f21.076082966389862!5f0.7820865974627469" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <p class="leading-relaxed text-lg mb-4">
+                    The Gateway of India stands as an iconic symbol of Mumbai, a grand archway that elegantly overlooks the Arabian Sea. Built in 1924 to commemorate the visit of King George V and Queen Mary, this monumental structure blends Indo-Saracenic and Islamic architectural styles, capturing the spirit of both colonial and Indian heritage. With its towering basalt structure and intricate design, the Gateway has become a beloved landmark, welcoming visitors from around the world. </p>
+                <p class="leading-relaxed text-lg mb-4">
+                    Situated in the bustling Colaba district, the Gateway of India is a lively hub, offering stunning views of the sea and the city’s skyline. It serves as the departure point for boats to Elephanta Island and is a popular spot for locals and tourists alike. Surrounded by vendors, photographers, and the historic Taj Mahal Palace hotel, the Gateway is a vibrant testament to Mumbai's rich history, blending tradition with the dynamic energy of modern India. </p>
+            </div>
+        </section>
+
+        <section class="container px-5 py-12 mx-auto">
+            <div class="lg:w-4/6 mx-auto mb-12">
+                <h2 class="text-2xl font-bold mb-6">Ajanta Caves: A Glimpse into Ancient Art and Spirituality
+                </h2>
+                <div class="rounded-lg overflow-hidden mb-10">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1730688364484!6m8!1m7!1sCAoSLEFGMVFpcFBwRFU2dFFNQk44ajZ5cUFmdTMzOUJKQnNCT1dUdEFNY25lSm1W!2m2!1d20.55186026150317!2d75.70325213924318!3f348.70696633556986!4f-1.71190272440181!5f0.541547758987428" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <p class="leading-relaxed text-lg mb-4">
+The Ajanta Caves, nestled in the Sahyadri Hills of Maharashtra, are an extraordinary collection of 30 rock-cut caves that date back to the 2nd century BCE. Renowned for their exquisite Buddhist art, these caves feature intricate carvings, grand sculptures, and vibrant frescoes that depict the life of Buddha and stories from Jataka tales. Each cave holds a unique design, illustrating the artistic brilliance and spiritual devotion of ancient Indian culture, making Ajanta a UNESCO World Heritage site and a must-visit for history and art lovers.
+</p>
+                <p class="leading-relaxed text-lg mb-4">
+                    Hidden within dense forest, the Ajanta Caves provide a serene and inspiring environment that transports visitors to a different era. The murals and statues within the caves are masterpieces of ancient Indian artistry, showcasing detailed expressions, fluid forms, and vivid colors that have withstood the test of time. Ajanta offers not only an artistic marvel but also a spiritual journey, as it invites visitors to experience the peaceful and meditative atmosphere cherished by the monks who once inhabited these sacred spaces.
+                </p>
+            </div>
+        </section>
+        
+        <section class="container px-5 py-12 mx-auto">
+            <div class="lg:w-4/6 mx-auto mb-12">
+                <h2 class="text-2xl font-bold mb-6">Kalu Falls: An Enchanting Escape into Nature’s Wonderland
+                </h2>
+                <div class="rounded-lg overflow-hidden mb-10">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1730728640089!6m8!1m7!1sCAoSLEFGMVFpcE84ZXJjanBSaXJBYTNBOFY0X2oyWTMxYXVwLVJ5MFBiLXNIVHZa!2m2!1d19.35776935743701!2d73.7919863582362!3f172.02913560378784!4f-25.620871466808453!5f0.7820865974627469" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <p class="leading-relaxed text-lg mb-4">
+                    Kalu Falls, nestled in the breathtaking landscapes of Maharashtra, India, invites travelers to experience its mesmerizing beauty and tranquil ambiance. Surrounded by lush greenery and rocky terrain, this stunning waterfall is a haven for nature lovers and adventure seekers alike. Cascading from a height of approximately 50 feet, the water tumbles gracefully into a serene pool, creating a picturesque setting that captivates the heart. The best time to visit Kalu Falls is during the monsoon season, when the falls are at their most powerful, transforming the area into a vibrant oasis filled with life and color.
+                </p>
+                <p class="leading-relaxed text-lg mb-4">
+                    Exploring Kalu Falls offers much more than just scenic views; it is an opportunity to immerse oneself in the wonders of nature. The trails leading to the falls are lined with exotic flora and fauna, providing an enchanting backdrop for trekking and photography. Visitors can enjoy swimming in the cool waters or simply relax amidst the soothing sounds of the cascading falls. Whether you seek a peaceful retreat or an exhilarating adventure, Kalu Falls promises an unforgettable experience that showcases the beauty of Maharashtra's wilderness. </p>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="bg-gray-200 text-center p-4">
+        <p class="text-gray-600">© 2024 Travel Destinations. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

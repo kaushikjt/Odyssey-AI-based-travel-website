@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #282c34;
+            color: #ddd; /* Lighter text color */
+        }
+
+        header {
+            background-color: #282c34;
+            color: #ddd; /* Lighter text color */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        header button {
+            background-color: #ff9800;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        header button:hover {
+            background-color: #e67e00;
+        }
+
+        main {
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .article-item {
+            background: #333; /* Darker background for articles */
+            border: 1px solid #444; /* Lighter border for contrast */
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-item .title {
+            font-size: 1.8em;
+            color: #fff; /* Light title text */
+            margin-bottom: 10px;
+        }
+
+        .article-item .description {
+            font-size: 1.1em;
+            color: #ccc; /* Lighter text for description */
+            margin-bottom: 15px;
+        }
+
+        .article-item img, 
+.image-gallery img {
+    max-width: 100%; /* Ensures the image fits within the container */
+    max-height: 100%; /* Ensures the image doesn’t exceed container height */
+    display: block; /* Removes any extra space under images */
+    object-fit: contain; /* Ensures the whole image is visible */
+    border-radius: 5px; /* Optional: keeps the rounded edges */
+}
+
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .image-gallery img {
+            border-radius: 5px;
+            width: 100%;
+            height: 200px; /* Ensures uniform image size */
+            object-fit: cover; /* Keep images consistent */
+        }
+
+        .learn-more {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1em;
+            margin-top: 15px;
+        }
+
+        .learn-more:hover {
+            background-color: #45a049;
+        }
+
+        .popup-form {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #333; /* Dark background for the form */
+            padding: 30px;
+            width: 450px;
+            max-width: 90%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            z-index: 1000;
+            color: #ddd; /* Lighter text for the form */
+        }
+
+        .popup-form h2 {
+            margin-top: 0;
+            font-size: 1.5em;
+            color: #fff; /* Light title text */
+        }
+
+        .popup-form label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #ddd; /* Lighter label text */
+        }
+
+        .popup-form input, .popup-form textarea, .popup-form button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 12px;
+            font-size: 1em;
+            border: 1px solid #555; /* Lighter border for inputs */
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #444; /* Dark background for inputs */
+            color: #fff; /* Light text for inputs */
+        }
+
+        .popup-form button {
+            margin-top: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 12px;
+            font-size: 1.1em;
+        }
+
+        .popup-form button:hover {
+            background-color: #45a049;
+        }
+
+        .delete-btn {
+            float: right;
+            cursor: pointer;
+            color: #dc3545;
+            font-size: 1.5em;
+            margin-left: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #282c34;
+            color: #ddd; /* Lighter footer text */
+            margin-top: 20px;
+        }
+            /* Navbar container */
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 75px;
+        background-color: #fff;
+        padding: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        z-index: 1000;
+        border-radius: 20px;
+    }
+
+    /* Container for icons */
+    .nav-icons {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+    }
+
+    /* Individual icon style */
+    .icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: transform 0.3s;
+        width: 50px;
+    }
+
+    /* Hover effect on icons */
+    .icon:hover {
+        transform: scale(1.1); /* Slight zoom effect on hover */
+    }
+
+    /* Icon text style */
+    .icon span {
+        margin-top: 5px;
+        font-size: 12px;
+        color: #333;
+    }
+
+    /* Image style for icons */
+    .icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Customizing icon sizes for some icons */
+    .icon img[src*="hotels.svg"] {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Ensuring icons are aligned properly */
+    .navbar .icon a {
+        text-decoration: none; /* Remove underlines */
+        color: inherit; /* Inherit color from the parent element */
+    }
+
+    /* Section styling */
+    section {
+        margin-top: 120px; /* Adjust to make space for the fixed navbar */
+    }
+
+    .section .container {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+
+    .underline {
+        width: 80px;
+        height: 3px;
+        background-color: #333;
+        margin-bottom: 20px;
+    }
+
+    .description {
+        font-size: 1.2em;
+        color: #666;
+        line-height: 1.5;
+    }
+
+    /* Cards styling */
+    .cards {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        background-color: #282c34;
+        border: 1px solid #282c34;
+        width: 300px;
+        padding: 15px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .card h2 {
+        font-size: 1.5em;
+        margin: 10px 0;
+    }
+
+    .card p {
+        color: #777;
+    }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-icons">
+                <div class="icon">
+                    <a href="flightSearchForm" onclick="navigateWithDelay(event, 'flightSearchForm')">
+                        <img src="images/flights.svg" alt="Flights" style="width: 40px; height: 40px;">
+                        <span>Flights</span>
+                    </a>
+                </div>
+                
+                <div class="icon">
+                    <a href="hotelsSearchForm.ejs" onclick="navigateWithDelay(event, 'hotelsSearchForm')">
+                        <img src="images/hotels.svg" alt="Hotels" style="width: 35px; height: 35px;">
+                    </a>
+                    <span>Hotels</span>
+                </div>
+                <div class="icon">
+                    <a href="train_ip_form" onclick="navigateWithDelay(event, 'train_ip_form')">
+                        <img src="images/trains.svg" alt="Trains" style="width: 40px; height: 40px;">
+                    </a>
+                    <span>Trains</span>
+                </div>
+                <div class="icon">
+                    <img src="images/bus.svg" alt="Buses" style="width: 40px; height: 40px;">
+                    <span>Buses</span>
+                </div>
+                <!-- <div class="icon">
+                    <img src="images/cab.svg" alt="Cabs" style="width: 40px; height: 40px;">
+                    <span>Cabs</span>
+                </div> -->
+                <div class="icon">
+                    <a href="blog" onclick="navigateWithDelay(event, 'blog')">
+                        <img src="images/blog.svg" alt="Blog" style="width: 40px; height: 40px;">
+                    </a>
+                    <span>Blog</span>
+                </div>
+                <!-- <div class="icon">
+                    <img src="images/ginie.svg" alt="Journey genie" style="width: 40px; height: 40px;">
+                    <span>Journey genie</span>
+                </div> -->
+                <div class="icon">
+                    <a href="vr" onclick="navigateWithDelay(event, 'vr')">
+                        <img src="images/vr.svg" alt="VR View" style="width: 40px; height: 40px;">
+                        <span>VR View</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+      </header>
+      <br>
+      <br><br>
+    
+       <centre><button id="addProjectBtn">Add Blog</button></centre> 
+    
+    <main>
+        <div id="articleWrapper"></div>
+    </main>
+    <div id="popupForm" class="popup-form">
+        <form id="projectForm">
+            <h2>Add Project</h2>
+            <label for="title">Title:</label>
+            <input type="text" id="title" required>
+            <label for="description">Short Description:</label>
+            <textarea id="description" required></textarea>
+            <label for="brief">Brief Description:</label>
+            <textarea id="brief" required></textarea>
+            <label for="images">Upload Images:</label>
+            <input type="file" id="images" accept="image/*" multiple required>
+            <button type="submit">Submit</button>
+            <button type="button" id="closePopup">Cancel</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const addProjectBtn = document.getElementById('addProjectBtn');
+            const popupForm = document.getElementById('popupForm');
+            const closePopup = document.getElementById('closePopup');
+            const projectForm = document.getElementById('projectForm');
+            const articleWrapper = document.getElementById('articleWrapper');
+
+            addProjectBtn.addEventListener('click', () => {
+                popupForm.style.display = 'block';
+            });
+
+            closePopup.addEventListener('click', () => {
+                popupForm.style.display = 'none';
+            });
+
+            projectForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const title = document.getElementById('title').value;
+                const description = document.getElementById('description').value;
+                const brief = document.getElementById('brief').value;
+                const images = document.getElementById('images').files;
+
+                if (title && description && brief && images.length > 0) {
+                    const imageArray = [];
+                    Array.from(images).forEach(image => {
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                            imageArray.push(e.target.result);
+                            if (imageArray.length === images.length) {
+                                const projects = JSON.parse(localStorage.getItem('projects')) || [];
+                                projects.push({
+                                    title,
+                                    description,
+                                    brief,
+                                    images: imageArray
+                                });
+                                localStorage.setItem('projects', JSON.stringify(projects));
+                                projectForm.reset();
+                                popupForm.style.display = 'none';
+                                displayProjects();
+                                alert('Project added successfully!');
+                            }
+                        };
+                        reader.readAsDataURL(image);
+                    });
+                } else {
+                    alert('Please fill in all fields and upload at least one image.');
+                }
+            });
+
+            function displayProjects() {
+                const projects = JSON.parse(localStorage.getItem('projects')) || [];
+                articleWrapper.innerHTML = '';
+
+                projects.forEach((project, index) => {
+                    const articleItem = document.createElement('div');
+                    articleItem.className = 'article-item';
+
+                    const imagesHtml = `
+                        <div class="image-gallery">
+                            ${project.images.map(image => `<img src="${image}" alt="${project.title}">`).join('')}
+                        </div>
+                    `;
+
+                    articleItem.innerHTML = `
+                        <span class="delete-btn" onclick="removeProject(${index})">&times;</span>
+                        <h2 class="title">${project.title}</h2>
+                        <p class="description">${project.description}</p>
+                        <a class="learn-more" href="#" onclick="toggleDetails(${index})">Learn More</a>
+                        <div class="detailed-view" id="details-${index}" style="display:none;">
+                            <p>${project.brief}</p>
+                            ${imagesHtml}
+                        </div>
+                    `;
+
+                    articleWrapper.appendChild(articleItem);
+                });
+            }
+
+            function removeProject(index) {
+                const projects = JSON.parse(localStorage.getItem('projects')) || [];
+                projects.splice(index, 1);
+                localStorage.setItem('projects', JSON.stringify(projects));
+                displayProjects();
+            }
+
+            window.toggleDetails = (index) => {
+                const details = document.getElementById(`details-${index}`);
+                details.style.display = details.style.display === 'none' ? 'block' : 'none';
+            };
+
+            displayProjects();
+        });
+    </script>
+    
+</body>
+</html>

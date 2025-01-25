@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/places.css">
+    <title>Travel Destinations</title>
+</head>
+<script>
+    function navigateWithDelay(event, url) {
+        event.preventDefault(); // Stops immediate redirection
+        const spinner = document.getElementById('loadingSpinner');
+        spinner.style.display = 'flex'; // Show the spinner
+        setTimeout(() => {
+            spinner.style.display = 'none'; // Hide the spinner after 3 seconds
+            window.location.href = url; // Navigate to the URL
+        }, 3000); // Delay in milliseconds
+    }
+
+    // Ensure the spinner is hidden when the page is shown (handles browser back/forward navigation)
+    window.addEventListener("pageshow", () => {
+        const spinner = document.getElementById('loadingSpinner');
+        spinner.style.display = 'none'; // Ensure it's hidden immediately when the page is shown
+    });
+</script>
+
+<body>
+    <div id="loadingSpinner" style="display: none;">
+        <img src="images/loading.gif" alt="Loading...">
+      </div>
+    <header class="bg-indigo-600 text-white text-center p-6 relative">
+        <div class="logo absolute left-6 top-1/2 transform -translate-y-1/2">
+            <a href="home" onclick="navigateWithDelay(event, 'home')">
+                <img src="images/logo.svg" alt="WanderWise Logo" style="width: 150px; height: auto;">
+            </a>
+        </div>
+        <div>
+            <h1 class="text-3xl font-bold">Explore Incredible Destinations</h1>
+            <p class="mt-2 text-lg">Discover the wonders of India</p>
+        </div>
+    </header>
+
+    <main class="text-gray-600 body-font">
+        <section class="container px-5 py-12 mx-auto">
+            <div class="lg:w-4/6 mx-auto mb-12">
+                <h2 class="text-2xl font-bold mb-6">
+                    Kerala Tea Plantation: The Majestic Hills of Kolukkumalai</h2>
+                <div class="rounded-lg overflow-hidden mb-10">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1730639279424!6m8!1m7!1sCAoSLEFGMVFpcE1rMGUzdC1nZnctajR1VnBjTkEwYWdHYU9JTlpGUlRDUUJxQWRl!2m2!1d10.0486977951703!2d77.05624973892651!3f251.31100376069563!4f-16.827301352589743!5f0.7820865974627469" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <p class="leading-relaxed text-lg mb-4">
+                    Nestled in the pristine Western Ghats, Kolukkumalai Tea Plantation in Kerala is celebrated as the highest tea estate in the world. This breathtaking location sits at an altitude of approximately 7,900 feet, offering not only a remarkable tea-producing experience but also some of the most stunning views in South India. The journey to Kolukkumalai is itself an adventure, with rugged roads winding through lush greenery and mist-covered hills, leading visitors to an almost untouched paradise. Every sunrise here paints the hills in shades of gold, casting a magical glow over the tea gardens, making it an ideal destination for tea lovers and nature enthusiasts alike.
+                </p>
+                <p class="leading-relaxed text-lg mb-4">
+                    Kolukkumalai is renowned for its organic, traditionally processed tea, crafted in a century-old factory that still uses original machinery and age-old techniques. The tea grown here has a distinctive flavor, owing to the high altitude and cool climate, which slow down the growth of the tea leaves, allowing them to absorb more flavor. Visitors can tour the factory to witness the traditional tea-making process firsthand, making this not just a scenic visit but an enriching cultural experience as well. The tea estate and its surroundings also serve as a hub for hiking, photography, and bird-watching, making Kolukkumalai a unique blend of natural beauty and cultural heritage in the heart of Kerala.
+  </p>
+            </div>
+        </section>
+
+        <section class="container px-5 py-12 mx-auto">
+            <div class="lg:w-4/6 mx-auto mb-12">
+                <h2 class="text-2xl font-bold mb-6">Varkala: The Coastal Gem of Kerala
+                </h2>
+                <div class="rounded-lg overflow-hidden mb-10">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1730639909091!6m8!1m7!1sCAoSLEFGMVFpcE5MTHVyUEtWSXZoYkVFMEdPdEVmYnEyb1R6aHJZZXVkb3dQOEph!2m2!1d8.739546724488015!2d76.6996852602029!3f316.3628553898299!4f-19.351426013206606!5f0.7820865974627469" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <p class="leading-relaxed text-lg mb-4">
+                    Varkala, a tranquil coastal town in Kerala, is a hidden paradise famous for its pristine beaches, dramatic cliffs, and serene backwaters. Unlike any other beach in India, Varkala is known for its unique red cliffs that rise majestically from the Arabian Sea, creating a breathtaking setting that attracts travelers from around the world. The Varkala Cliff, a protected geological site, is dotted with lively cafes, cozy resorts, and yoga retreats, offering a perfect blend of natural beauty and relaxation. The serene Papanasam Beach below is not only popular for sunbathing and swimming but also holds spiritual significance for locals, who believe its waters have the power to cleanse sins.</p>
+                </p>
+                <p class="leading-relaxed text-lg mb-4">
+                    In addition to its scenic beauty, Varkala is a center for wellness, yoga, and Ayurvedic treatments. Numerous wellness centers along the cliff offer a range of therapies and massages, drawing wellness seekers to this serene locale. The town is also rich in culture and history, with the ancient Janardana Swami Temple, often called the "Benares of the South," adding a spiritual aura to the town. Whether you’re seeking a peaceful escape, an adventure by the sea, or a holistic retreat, Varkala offers a one-of-a-kind experience with its captivating landscapes and tranquil vibes.  </p>
+            </div>
+        </section>
+        
+        <section class="container px-5 py-12 mx-auto">
+            <div class="lg:w-4/6 mx-auto mb-12">
+                <h2 class="text-2xl font-bold mb-6">Alleppey Houseboats: A Unique Journey Through Kerala’s Backwaters
+                </h2>
+                <div class="rounded-lg overflow-hidden mb-10">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1730640771300!6m8!1m7!1sCAoSLEFGMVFpcE1BRThXVFBzYmt0X1B6Q1VtMEcyT1FrYTlabElBdGR5Q1R5ZF9N!2m2!1d9.489100145165798!2d76.36492352568854!3f220!4f0!5f0.7820865974627469" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+                <p class="leading-relaxed text-lg mb-4">
+                    Alleppey, often referred to as the "Venice of the East," is world-renowned for its enchanting backwaters and luxurious houseboats. The houseboats in Alleppey, or "kettuvallams," are traditional wooden boats that have been transformed into floating cottages complete with all modern amenities, offering a serene and immersive experience of Kerala’s natural beauty. Cruising through the intricate network of lagoons, canals, and lakes, these houseboats allow travelers to witness the rustic charm of Kerala up close – from swaying palm trees and vibrant green paddy fields to charming village life along the banks.</p>
+                </p>
+                <p class="leading-relaxed text-lg mb-4">
+                    The houseboat experience in Alleppey is more than just a scenic journey; it’s a window into the rich cultural heritage of Kerala. Onboard, guests can savor authentic Kerala cuisine, freshly prepared with local spices, seafood, and coconut flavors that tantalize the taste buds. The gentle rhythm of the water, the sight of colorful migratory birds, and the warm hospitality of the crew create a truly magical ambiance. Spending a night on the houseboat, watching the sunset over the backwaters, is an unforgettable experience, making Alleppey one of the most sought-after destinations for travelers seeking tranquility and an authentic taste of Kerala’s timeless beauty.
+                </p>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="bg-gray-200 text-center p-4">
+        <p class="text-gray-600">© 2024 Travel Destinations. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
